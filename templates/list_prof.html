@@ -2,12 +2,16 @@
 
 {% block content %}
     <meta charset="UTF-8">
-<h2 align="left">Список профессий</h2>
-    {% if list == 'oi' %}
-        <ol padding-left: 20px> </ol>
-        <img src="" alt="here should be a scheme">
+    <h2 align="left">Список профессий</h2>
+    {% if list == 'ol' %}
+           {% for x in professions %}
+               <ol padding-left: 20px>{{ x }}</ol>
+           {% endfor %}
+     {% elif list == 'ul' %}
+           {% for x in professions %}
+               <ul padding-left: 20px>{{ x }}</ul>
+           {% endfor %}
     {% else %}
-        <h2 align="center">Научные симуляторы</h2>
-        <img src="" alt="here should be a scheme">
+           <p>Wrong parameter</p>
     {% endif %}
 {% endblock %}
