@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <h2 align="left">Список профессий</h2>
     {% if list == 'ol' %}
-           {% for x in professions %}
-               <ol padding-left: 20px>{{ x }}</ol>
-           {% endfor %}
+           <ol padding-left: 20px>
+            {% for x in professions %}
+                <li>{{ x }}</li>
+            {% endfor %}
+           </ol>
      {% elif list == 'ul' %}
-           {% for x in professions %}
-               <ul padding-left: 20px>{{ x }}</ul>
-           {% endfor %}
+           <ul padding-left: 20px>
+            {% for x in professions %}
+                <li>{{ x }}</li>
+            {% endfor %}
+           </ul>
     {% else %}
            <p>Wrong parameter</p>
     {% endif %}
