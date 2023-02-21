@@ -14,7 +14,7 @@ class LoginForm(FlaskForm):
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/<title>')
 @app.route('/index/<title>')
 def index(title):
     return render_template('base.html', title=title)
@@ -44,6 +44,20 @@ def lest(list):
                    'штурман',
                    'пилот дронов']
     return render_template('list_prof.html', list=list, professions=professions)
+
+
+@app.route('/answer')
+@app.route('/auto_answer')
+def auto_answer():
+    dictionary = {'title': '',
+                  'surname': '',
+                  'name': '',
+                  'education': '',
+                  'profession': '',
+                  'sex': '',
+                  'motivation': '',
+                  'ready': ''
+                  }
 
 
 if __name__ == '__main__':
