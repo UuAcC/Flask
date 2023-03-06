@@ -6,6 +6,7 @@ from data.users import User
 from data.news import News
 from flask_login import LoginManager, login_manager
 from forms.user import RegisterForm
+from forms.autorization import AddJobForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -105,6 +106,11 @@ def session_test():
     session['visits_count'] = visits_count + 1
     return make_response(
         f"Вы пришли на эту страницу {visits_count + 1} раз")
+
+
+@app.route('/addjob', methods=['GET', 'POST'])
+def addjob():
+    add_form = AddJobForm
 
 
 if __name__ == '__main__':
