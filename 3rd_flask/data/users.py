@@ -1,12 +1,12 @@
 import datetime
 import sqlalchemy
+from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
-
 from .db_session import SqlAlchemyBase
 from sqlalchemy import orm
 
 
-class User(SqlAlchemyBase):
+class User(SqlAlchemyBase, UserMixin):
     __tablename__ = 'users'
     news = orm.relationship("News", back_populates='user')
 
