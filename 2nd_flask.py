@@ -49,14 +49,14 @@ def lest(list):
 @app.route('/answer')
 @app.route('/auto_answer')
 def auto_answer():
-    dictionary = {'title': '',
-                  'surname': '',
-                  'name': '',
-                  'education': '',
-                  'profession': '',
-                  'sex': '',
-                  'motivation': '',
-                  'ready': ''
+    dictionary = {'title': 'Анкета',
+                  'surname': 'Watny',
+                  'name': 'Tank',
+                  'education': 'выше среднего',
+                  'profession': 'штурман марсохода',
+                  'sex': 'male',
+                  'motivation': 'Всегда мечтал застрять на Марсе!',
+                  'ready': 'True'
                   }
 
 
