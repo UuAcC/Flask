@@ -1,19 +1,17 @@
 import db_session
-from users import User
+from jobs import Jobs
 
 
 def main():
     db_session.global_init("mars_explorer.db")
-    user = User()
-    user.surname = input()
-    user.name = input()
-    user.age = input()
-    user.position = input()
-    user.speciality = input()
-    user.address = input()
-    user.email = input()
+    job = Jobs()
+    job.team_leader = input()
+    job.job = input()
+    job.work_size = input()
+    job.collaborators = input()
+    job.is_finished = False
     db_sess = db_session.create_session()
-    db_sess.add(user)
+    db_sess.add(job)
     db_sess.commit()
 
 
