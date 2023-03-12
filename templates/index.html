@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <meta charset="UTF-8">
-    {% if 'инженер' in prof or 'строитель' in prof %}
-        <h2 align="center">Инженерные тренажёры</h2>
-        <img src="" alt="here should be a scheme">
-    {% else %}
-        <h2 align="center">Научные симуляторы</h2>
-        <img src="" alt="here should be a scheme">
-    {% endif %}
+<h1>Записи в блоге</h1>
+{% for item in news%}
+<div class="col-md6 border rounded">
+    <h2>{{item.title}}</h2>
+    <div>
+        {{item.content}}
+    </div>
+    <div>
+        Автор - {{item.user.name}}, Дата написания - {{item.created_date}}
+    </div>
+</div>
+{% endfor %}
 {% endblock %}
