@@ -27,8 +27,6 @@ def get_news():
 @blueprint.route('/api/news/<int:news_id>', methods=['GET'])
 def get_one_news(news_id):
     db_sess = db_session.create_session()
-    if not news_id.is_digit():
-        return jsonify({'error': "Argument's type is not int"})
     news = db_sess.query(News).get(news_id)
     if not news:
         return jsonify({'error': 'Not found'})
@@ -55,5 +53,16 @@ def create_news():
         is_private=request.json['is_private']
     )
     db_sess.add(news)
+    db_sess.commit()
+    return jsonify({'success': 'OK'})
+
+
+@blueprint.route('/api/news/<int:news_id>', methods=['DELETE'])
+def delete_news(news_id):
+    db_sess = db_session.create_session()
+    news = db_sess.query(News).get(news_id)
+    if not news:
+        return jsonify({'error': 'Not found'})
+    db_sess.delete(news)
     db_sess.commit()
     return jsonify({'success': 'OK'})
