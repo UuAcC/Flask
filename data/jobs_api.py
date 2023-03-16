@@ -1,3 +1,8 @@
+import flask
+from flask import jsonify, request
+from data import db_session
+from .jobs import Jobs
+
 blueprint = flask.Blueprint(
     'news_api',
     __name__,
