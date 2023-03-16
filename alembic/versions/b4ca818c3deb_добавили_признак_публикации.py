@@ -1,8 +1,8 @@
 """добавили признак публикации
 
-Revision ID: 78ba895e4630
+Revision ID: b4ca818c3deb
 Revises: 
-Create Date: 2023-03-13 17:53:10.334167
+Create Date: 2023-03-16 17:05:57.905083
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '78ba895e4630'
+revision = 'b4ca818c3deb'
 down_revision = None
 branch_labels = None
 depends_on = None
