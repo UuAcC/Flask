@@ -25,6 +25,5 @@ try:
             print(line)
     if count:
         print(f'rows count: {len(result)}')
-
 except Exception:
     print('ERROR')

@@ -20,6 +20,6 @@ try:
         for line in result:
             print(line)
     if args.count:
-        print(len(result))
+        print(f'rows count: {len(result)}')
 except Exception:
     print('ERROR')
