@@ -25,3 +25,5 @@ urllib3
 Werkzeug
 WTForms
 zipp
+
+discord~=2.2.2
